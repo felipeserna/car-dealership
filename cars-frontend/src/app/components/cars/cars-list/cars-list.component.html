@@ -1,0 +1,22 @@
+<h2>Cars List</h2>
+<div>
+    <table *ngIf="cars.length > 0">
+        <tr>
+            <th>Id</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Is it new?</th>
+            <th>Price $USD</th>
+        </tr>
+        <tr *ngFor="let car of cars">
+            <td>{{ car.id }}</td>
+            <td>{{ car.brand }}</td>
+            <td>{{ car.model }}</td>
+            <td>{{ car.year }}</td>
+            <td>{{ car.isNew}}</td>
+            <td>{{ car.price }}</td>
+        </tr>        
+    </table>
+    <h2 *ngIf="cars.length == 0">No cars found</h2>
+</div>
