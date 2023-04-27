@@ -1,0 +1,29 @@
+<h2>Buy Car</h2>
+<div>
+    <form #form="ngForm" (ngSubmit)="buyCar()">
+        <label for="brand">Brand</label>
+        <input type="text" id="brand" name="brand"
+        [(ngModel)]="buyCarRequest.brand">
+
+        <label for="model">Model</label>
+        <input type="text" id="model" name="model"
+        [(ngModel)]="buyCarRequest.model">
+
+        <label for="year">Year</label>
+        <input type="number" id="year" name="year"
+        [(ngModel)]="buyCarRequest.year">
+
+        <label for="isNew">Is it new?</label>
+        <select id="isNew" name="isNew"
+        [(ngModel)]="buyCarRequest.isNew">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select>
+
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price"
+        [(ngModel)]="buyCarRequest.price">
+
+        <input type="submit" value="Buy">
+    </form>
+</div>

@@ -8,6 +8,7 @@
             <th>Year</th>
             <th>Is it new?</th>
             <th>Price $USD</th>
+            <th> </th>
         </tr>
         <tr *ngFor="let car of cars">
             <td>{{ car.id }}</td>
@@ -16,6 +17,7 @@
             <td>{{ car.year }}</td>
             <td>{{ car.isNew}}</td>
             <td>{{ car.price }}</td>
+            <td><a [routerLink]="['/cars', 'exchange', car.id]">View</a></td>
         </tr>        
     </table>
     <h2 *ngIf="cars.length == 0">No cars found</h2>

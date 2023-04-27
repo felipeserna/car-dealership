@@ -15,4 +15,18 @@ export class CarsService {
   getAllCars(): Observable<ICar[]> {
     return this.http.get<ICar[]>(this.baseApiUrl + '/api/cars');
   }
+
+  buyCar(buyCarRequest: ICar): Observable<ICar> {
+    buyCarRequest.id = '00000000-0000-0000-0000-000000000000';
+    buyCarRequest.isNew = true;
+    return this.http.post<ICar>(this.baseApiUrl + '/api/cars', buyCarRequest);
+  }
+
+  getCar(id: string): Observable<ICar> {
+    return this.http.get<ICar>(this.baseApiUrl + '/api/cars/' + id);
+  }
+
+  exchangeCar(id: string, exchangeCarRequest: ICar): Observable<ICar> {
+    return this.http.put<ICar>(this.baseApiUrl + '/api/cars/' + id, exchangeCarRequest)
+  }
 }
