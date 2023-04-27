@@ -27,6 +27,10 @@ export class CarsService {
   }
 
   exchangeCar(id: string, exchangeCarRequest: ICar): Observable<ICar> {
-    return this.http.put<ICar>(this.baseApiUrl + '/api/cars/' + id, exchangeCarRequest)
+    return this.http.put<ICar>(this.baseApiUrl + '/api/cars/' + id, exchangeCarRequest);
+  }
+
+  sellCar(id: string): Observable<ICar> {
+    return this.http.delete<ICar>(this.baseApiUrl + '/api/cars/' + id);
   }
 }

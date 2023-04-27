@@ -1,4 +1,4 @@
-<h2>Exchange Car</h2>
+<h2>Exchange or Sell Car</h2>
 <div>
     <form #form="ngForm" (ngSubmit)="exchangeCar()">
         <label for="id">Id</label>
@@ -24,10 +24,11 @@
             <option value="false">False</option>
         </select>
 
-        <label for="price">Price</label>
+        <label for="price">Price $USD</label>
         <input type="number" id="price" name="price"
         [(ngModel)]="carDetails.price">
 
-        <input type="submit" value="Exchange">
+        <input type="submit" value="Exchange Car">
+        <input type="button" value="Sell Car" (click)="sellCar(carDetails.id)">
     </form>
 </div>

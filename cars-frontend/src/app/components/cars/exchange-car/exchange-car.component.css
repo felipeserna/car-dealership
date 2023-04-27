@@ -13,7 +13,7 @@ input[type=submit] {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 88px 0;
+    margin: 58px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -21,6 +21,17 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: #45a049;
+}
+
+input[type=button] {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    padding: 14px 20px;
+    margin: 48px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 div {

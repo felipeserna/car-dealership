@@ -67,6 +67,23 @@ namespace CarsBackend.Controllers
 
             return Ok(car);
         }
+        [HttpDelete]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> SellCar([FromRoute] Guid id)
+        {
+            var car = await _carsBackendDBContext.Cars.FindAsync(id);
+
+            if (car == null)
+            {
+                return NotFound();
+            }
+
+            _carsBackendDBContext.Cars.Remove(car);
+
+            await _carsBackendDBContext.SaveChangesAsync();
+
+            return Ok(car);
+        }
         
     }
 }

@@ -47,4 +47,14 @@ export class ExchangeCarComponent implements OnInit {
     });
   }
 
+  sellCar(id: string) {
+    this.carsService.sellCar(id)
+    .subscribe({
+      next: (response) => {
+        this.router.navigate(['cars']);
+      }
+
+    });
+  }
+
 }
