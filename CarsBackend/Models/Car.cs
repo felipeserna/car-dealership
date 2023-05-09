@@ -10,7 +10,7 @@
 
         public int Year { get; set; }
 
-        public bool IsNew { get; set; }
+        public string IsNew { get; set; }
 
         public int Price { get; set; }
     }

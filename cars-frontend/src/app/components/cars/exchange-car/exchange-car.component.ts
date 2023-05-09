@@ -15,7 +15,7 @@ export class ExchangeCarComponent implements OnInit {
     brand: '',
     model: '',
     year: 0,
-    isNew: false,
+    isNew: 'Yes',
     price: 0
   };
 

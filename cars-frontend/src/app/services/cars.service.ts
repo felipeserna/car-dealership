@@ -18,7 +18,6 @@ export class CarsService {
 
   buyCar(buyCarRequest: ICar): Observable<ICar> {
     buyCarRequest.id = '00000000-0000-0000-0000-000000000000';
-    buyCarRequest.isNew = true;
     return this.http.post<ICar>(this.baseApiUrl + '/api/cars', buyCarRequest);
   }
 

@@ -3,6 +3,6 @@ export interface ICar {
     brand: string;
     model: string;
     year: number;
-    isNew: boolean;
+    isNew: string;
     price: number;
 }
