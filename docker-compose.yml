@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./CarsBackend/Dockerfile
+    image: ddd.api
+    container_name: ddd.api
+    ports:
+      - 7033:80
+    environment:
+      DbServer: "db"
+      DbPort: "1433"
+      DbUser: "sa"
+      Password: "SuperSecurePasswordBookProject123"
+      Database: "FullStackDb"
+    restart: on-failure
+    depends_on:
+      - db
+  client:
+    build:
+      context: cars-frontend
+      target: builder
+    ports:
+      - 4200:4200
+    volumes:
+      - ./angular:/project
+      - /project/node_modules
+    depends_on:
+      - api
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-18.04
+    container_name: ddd.db
+    environment:
+      SA_PASSWORD: "SuperSecurePasswordBookProject123"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
+    ports:
+      - 1433:1433 # exposed just for debugging purposes
